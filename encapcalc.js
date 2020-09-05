@@ -29,11 +29,11 @@ var baseProtocols = {
   "MPLS": 4,
   "L2TPv3": 8,
   "GRE": 4,
-  "LISP": 16,
-  "VXLAN": 16,
+  "LISP+UDP": 16,
+  "VXLAN+UDP": 16,
   "NVGRE": 8,
-  "STT": 38,
-  "WireGuard": 40,
+  "STT+TCP": 38,
+  "WireGuard+UDP": 40,
 };
 
 // These are additional options
