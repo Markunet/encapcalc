@@ -34,6 +34,7 @@ var baseProtocols = {
   "NVGRE": 8,
   "STT+TCP": 38,
   "WireGuard+UDP": 40,
+  "GTPv1-U+UDP": 16,
 };
 
 // These are additional options
