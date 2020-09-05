@@ -184,7 +184,7 @@ function addProtocol(name) {
 
     content = "<div class='protocol-text'> <span class='protocol-item-" + name + "'>" + name + "</span> (" +
              window.protocolData[name] + " bytes) </div>";
-    content += "<div class='remove-button'> <input type='button' value='Remove'/> </div>";
+    content += "<div class='remove-button'> <input type='button' value='削除'/> </div>";
 
     protocol.innerHTML = "<div class='protocol-options'>" + content + "</div>";
 

@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 -->
 
-<html lang="en">
+<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visual packet size calculator</title>
@@ -42,58 +42,48 @@ THE SOFTWARE.
         </div>
       </div>
       <details>
-        <summary>Options</summary>
+        <summary>オプション</summary>
         <div class="box-wrapper">
           <form name="ifaceoptions">
-            <span id="mtu-desc">Parent interface MTU: </span> <input type="text" value="1500" id="parent-mtu" />
+            <span id="mtu-desc">基本となるMTUサイズ: </span> <input type="text" value="1500" id="parent-mtu" />
             <br />
-            <span>Calculation mode:</spam>
+            <span>計算モードの選択:</spam>
             <br />
-            <input id="mode-pdu" name="mode" type="radio" value="sub" checked="checked"> Encapculated protocol MTU (subtract overhead from the parent interface MTU)
+            <input id="mode-pdu" name="mode" type="radio" value="sub" checked="checked"> カプセル化後のMTUサイズを算出 (基本となるMTUサイズから、オーバーヘッドを差し引いた値)
             <br />
-            <input id="mode-frame-size" name="mode" type="radio" value="add"> Frame size (add overhead to payload size)
+            <input id="mode-frame-size" name="mode" type="radio" value="add"> フレームサイズを算出 (基本となるMTUサイズに、オーバヘッドを追加したペイロードサイズの値)
           </form>
         </div>
       </details>
       <div class="box-wrapper">
-        <strong>Header size (overhead):</strong> <span id="overhead"></span>
+        <strong>ヘッダサイズ (オーバヘッド):</strong> <span id="overhead"></span>
         <br />
         <span id="result-desc"><strong>MTU:</strong></span> <span id="tunnel-mtu"></span>
       </div>
       <div id="share" class="box-wrapper">
         <form>
-          <label for="sharing-link">Share this calculation:</label>
+          <label for="sharing-link">計算結果を共有:</label>
           <input type="text" id="sharing-link">
-          <input type="button" value="Copy" id="copy-sharing-link">
+          <input type="button" value="コピー" id="copy-sharing-link">
         </form>
       </div>
       <div class="box-wrapper">
         <div id="protocols">
-          <span>Protocols (click protocol buttons one or more time to add):</span>
+          <span>プロトコル (プロトコルボタンを1回以上クリックして追加):</span>
             <!-- Generated content here -->
         </div>
       </div>
       <div class="notes">
         <h3>Notes</h3>
         <p>
-          Knowing the encapsulation overhead of your protocol stack is important for configuring VPN tunnels.
-          You need to set the tunnel interface <abbr title="Maximum Transmission Unit">MTU</abbr> correctly, to avoid excessive packet fragmentation.
-        </p>
-        <p>
-          This tool allows you to easily see what each protocol adds to your packet. Click protocol buttons to add protocols to the stack.
-          Some protocols have additional options, e.g. if you click Ethernet, you will see VLAN and QinQ header option checkboxes.
+          任意のプロトコルによってパケットがカプセル化されるトンネルインターフェースのMTUサイズを視覚的に求めるツール。
         </p>
         <p>For example, if you want the TCP <abbr title="Maximum Segment Size">MSS</abbr> for IPv6 in GRE over IPv4, click: IPv4, GRE, IPv6, TCP.</p>
-        <p>
-          Header sizes for VXLAN, LISP, and WireGuard include UDP, and STT includes TCP, because these protocols never use another L4 protocol.
-          Everything else is pure header size exclusing any outer or inner protocols, e.g. &ldquo;MPLS&rdquo; is the size of a single MPLS label
-          (4 bytes).
-        </p>
       </div>
       <div class="copyright">
          &copy; <a href="https://www.baturin.org">Daniil Baturin</a> and contributors, 2013-2020.<br><br>
          <a href="https://mit-license.org/"> <img height="31" src="mit-license.svg" alt="MIT license"> </a>
-         <a href="https://github.com/dmbaturin/encapcalc"> <img height="31" src="github.svg" alt="GitHub"> </a>
+         <a href="https://github.com/markunet/encapcalc"> <img height="31" src="github.svg" alt="GitHub"> </a>
       </div>
     </div>
   </body>
