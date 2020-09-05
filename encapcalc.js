@@ -35,6 +35,7 @@ var baseProtocols = {
   "STT+TCP": 38,
   "WireGuard+UDP": 40,
   "GTPv1-U+UDP": 16,
+  "EtherIP": 2,
 };
 
 // These are additional options
@@ -48,7 +49,7 @@ var virtualProtocols = {
 
 // "Composite" protocol shortcuts
 var protocolShortcuts = {
-  "EoIP": ["IPv4", "GRE", "Ethernet"],
+  "EoGRE": ["IPv4", "GRE", "Ethernet"],
   "IPIP": ["IPv4", "IPv4"],
   "SIT (6in4)": ["IPv4", "IPv6"],
   "IP6IP6": ["IPv6", "IPv6"]
